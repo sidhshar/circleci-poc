@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block pname %}
+Home
+{% endblock %}
+
+{% block content %}
+
+Home
+
+<br>
+{% if user.is_authenticated %}
+Congrats , You have been Loged in Succesfully.
+Explore the site
+<br>
+<a href="{% url 'displayorganization' %}"> Display Organizations </a>
+{% else %}
+Please Login to continue
+{% endif %}
+
+{% endblock %}

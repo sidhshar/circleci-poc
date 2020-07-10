@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2> Upload </h2>
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<input type="file" accept="application/pdf" name="docy" >
+<button type="submit">Upload File</button>
+</form>
+
+{% if h and filename and filesize %}
+Uploaded Document Data :
+<br>
+File name : {{ filename }}
+<br>
+File Size : {{ filesize }}
+<br>
+<hr>
+{{  h }}
+<hr>
+{% endif %}
+{% endblock %}

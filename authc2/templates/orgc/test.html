@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+{% extends 'base.html' %}
+{% block content %}
+<body>
+{% for i in con %}
+<a href="{% url 'editorganization' i.id %}"> <h1>{{i}}</h1></a>
+{{ i.id }}
+{{ i.size }}
+{{ i.industry_type }}
+{{ i.controls_around_infrastructure_governance_itfacilities }}
+{{ i.number_of_locations }}
+{{ i.employee_strength }}
+{{ i.vendors_and_thirdparties }}
+{{ i.legal_and_compliance_obligations }}
+{{ i.existing_certifications_and_compliance }}
+
+<br>
+
+{% endfor %}
+</body>
+{% endblock %}
+</html>
